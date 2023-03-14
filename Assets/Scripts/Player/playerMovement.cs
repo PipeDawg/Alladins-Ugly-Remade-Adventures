@@ -28,7 +28,7 @@ public class playerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), distanceToGround, ground);
             if(hit == true){
-                rb2D.AddForce(transform.TransformDirection(Vector2.up) * jumpForce);
+                rb2D.AddForce(transform.TransformDirection(Vector2.up) * jumpForce, ForceMode2D.Impulse);
             }
         }
     }
